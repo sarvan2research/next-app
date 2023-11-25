@@ -20,9 +20,7 @@ export default function RootLayout({
     <html data-theme="winter" lang="en">
       <body className={inter.className}>
         <NavBar />
-        <Suspense fallback="Loading ..">
-          <main className="p-5">{children}</main>
-        </Suspense>
+        <main className="p-5">{children}</main>
       </body>
     </html>
   );
