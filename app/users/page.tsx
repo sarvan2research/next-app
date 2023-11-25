@@ -4,6 +4,7 @@ import { idText } from "typescript";
 interface User {
   id: number;
   name: string;
+  email: string;
 }
 
 const UsersPage = async () => {
@@ -16,11 +17,20 @@ const UsersPage = async () => {
   return (
     <>
       <h1>UsersPage</h1>
-      <ul>
+      <table className="table table-zebra">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
         {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <tr className="hover" key={user.id}>
+            <td>{user.name}</td>
+            <td>{user.email}</td>
+          </tr>
         ))}
-      </ul>
+      </table>
     </>
   );
 };
